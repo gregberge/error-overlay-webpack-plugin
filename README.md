@@ -22,7 +22,7 @@ npm install error-overlay-webpack-plugin --save-dev
 
 ```js
 // webpack.config.js
-const ErrorOverlayPlugin = require('webpack-error-overlay-plugin')
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
 
 module.exports = {
   entry: 'main.js',
