@@ -1,0 +1,42 @@
+{
+  "name": "error-overlay-webpack-plugin",
+  "description": "Webpack plugin to automatically display an error overlay in your application.",
+  "keywords": [
+    "webpack",
+    "plugin",
+    "webpack-plugin",
+    "react",
+    "react-error-overlay",
+    "error-overlay"
+  ],
+  "bugs": "https://github.com/smooth-code/webpack-error-overlay-plugin/issues",
+  "homepage": "https://github.com/smooth-code/webpack-error-overlay-plugin",
+  "repository": "https://github.com/smooth-code/webpack-error-overlay-plugin.git",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel -d lib src",
+    "ci": "yarn build && yarn lint",
+    "format": "prettier --write \"packages/**/*.{js,json,md}\" \"*.{js,json,md}\"",
+    "lint": "eslint .",
+    "release": "standard-version && conventional-github-releaser -p angular"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "conventional-github-releaser": "^2.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "prettier": "^1.11.1",
+    "standard-version": "^4.3.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react-dev-utils": "^5.0.0",
+    "react-error-overlay": "^4.0.0"
+  }
+}
