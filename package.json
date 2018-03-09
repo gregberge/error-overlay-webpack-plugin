@@ -9,9 +9,9 @@
     "react-error-overlay",
     "error-overlay"
   ],
-  "bugs": "https://github.com/smooth-code/webpack-error-overlay-plugin/issues",
-  "homepage": "https://github.com/smooth-code/webpack-error-overlay-plugin",
-  "repository": "https://github.com/smooth-code/webpack-error-overlay-plugin.git",
+  "bugs": "https://github.com/smooth-code/error-overlay-webpack-plugin/issues",
+  "homepage": "https://github.com/smooth-code/error-overlay-webpack-plugin",
+  "repository": "https://github.com/smooth-code/error-overlay-webpack-plugin.git",
   "version": "0.1.0",
   "main": "lib/index.js",
   "scripts": {
