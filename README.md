@@ -15,14 +15,14 @@ This plugin display an error overlay in your application, it is the same error o
 <img src="https://raw.githubusercontent.com/smooth-code/error-overlay-webpack-plugin/master/docs/example.png" alt="Error Overlay Webpack Plugin Example">
 
 ```
-npm install error-overlay-webpack-plugin
+npm install error-overlay-webpack-plugin --save-dev
 ```
 
 ## Usage
 
 ```js
 // webpack.config.js
-const ErrorOverlayPlugin = require('webpack-error-overlay-plugin')
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
 
 module.exports = {
   entry: 'main.js',
