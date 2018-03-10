@@ -22,6 +22,9 @@
     "prepublishOnly": "yarn build",
     "release": "standard-version && conventional-github-releaser -p angular"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
@@ -32,6 +35,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.9.0",
+    "jest": "^22.4.2",
     "prettier": "^1.11.1",
     "standard-version": "^4.3.0"
   },
