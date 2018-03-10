@@ -1,7 +1,11 @@
 import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware'
 
 export function tapEntry(context, entry) {
-  entry.unshift(require.resolve('./entry'))
+  if (typeof entry === "string") {
+    throw new Error("error-overlay-webpack-plugin does not support string entry")
+  } else if (Array.isArray(entry)) {
+    entry.unshift(require.resolve('./entry'))
+  }
 }
 
 class ErrorOverlayPlugin {
