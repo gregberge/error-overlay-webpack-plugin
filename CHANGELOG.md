@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.1.2...v0.1.3) (2018-03-11)
+
+
+### Bug Fixes
+
+* expose package without `.default` ([bcdcd15](https://github.com/smooth-code/error-overlay-webpack-plugin/commit/bcdcd15)), closes [#3](https://github.com/smooth-code/error-overlay-webpack-plugin/issues/3)
+* handle Object-based entry settings (multi-entries) ([3d6489d](https://github.com/smooth-code/error-overlay-webpack-plugin/commit/3d6489d)), closes [#4](https://github.com/smooth-code/error-overlay-webpack-plugin/issues/4)
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.1.1...v0.1.2) (2018-03-09)
 
