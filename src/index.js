@@ -46,4 +46,4 @@ Please use a multi-main (array) or object-form \`entry\` setting for now.`,
   return entry
 }
 
-export default ErrorOverlayPlugin
+module.exports = ErrorOverlayPlugin
