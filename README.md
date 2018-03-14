@@ -6,7 +6,7 @@
 
 Catch errors with style 💥✨
 
-This plugin display an error overlay in your application, it is the same error overlay used in [create-react-app](https://github.com/facebook/create-react-app).
+This plugin will display an error overlay in your application. It is the same error overlay used in [create-react-app](https://github.com/facebook/create-react-app).
 
 * 📦 Webpack 4 support
 * 🥞 Elegant stack trace
