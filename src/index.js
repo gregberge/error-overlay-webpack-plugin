@@ -38,8 +38,8 @@ Please use a multi-main (array) or object-form \`entry\` setting for now.`,
       entry.unshift(chunkPath)
     }
   } else {
-    Object.entries(entry).forEach(([entryName, entryDesc]) => {
-      entry[entryName] = adjustEntry(entryDesc, chunkPath)
+    Object.keys(entry).forEach((entryName) => {
+      entry[entryName] = adjustEntry(entry[entryName], chunkPath)
     })
   }
 
