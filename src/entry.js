@@ -20,7 +20,7 @@ setEditorHandler(errorLocation => {
 })
 
 startReportingRuntimeErrors({
-  onError() {
+  onError: function() {
     module.hot.addStatusHandler(status => {
       if (status === 'apply') {
         window.location.reload()
