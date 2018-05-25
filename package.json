@@ -25,6 +25,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "conventional-github-releaser": "^2.0.0",
