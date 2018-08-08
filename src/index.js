@@ -7,8 +7,10 @@ class ErrorOverlayPlugin {
     if (compiler.options.mode !== 'development') return
 
     compiler.hooks.entryOption.tap(className, (context, entry) => {
-      const chunkPath = require.resolve('./entry')
-      adjustEntry(entry, chunkPath)
+      compiler.hooks.compilation.tap(compilation => {
+        const chunkPath = require.resolve('./entry')
+        adjustEntry(entry, chunkPath, compilation)
+      })
     })
 
     compiler.hooks.afterResolvers.tap(className, ({ options }) => {
@@ -25,7 +27,7 @@ class ErrorOverlayPlugin {
   }
 }
 
-function adjustEntry(entry, chunkPath) {
+function adjustEntry(entry, chunkPath, compilation) {
   if (typeof entry === 'string') {
     throw new Error(
       `We currently do not inject our entry code into single-file anonymous entries.
@@ -38,9 +40,13 @@ Please use a multi-main (array) or object-form \`entry\` setting for now.`,
       entry.unshift(chunkPath)
     }
   } else {
-    Object.keys(entry).forEach((entryName) => {
-      entry[entryName] = adjustEntry(entry[entryName], chunkPath)
-    })
+    const className = ErrorOverlayPlugin.constructor.name
+    compilation.warnings.push(
+      new Error(
+        `${className}: When using entry as object-form the error overlay will not show errors that occur before it loads`,
+      ),
+    )
+    entry.errorOverlay = chunkPath
   }
 
   return entry
