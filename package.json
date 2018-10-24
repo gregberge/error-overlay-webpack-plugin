@@ -37,8 +37,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "react-dev-utils": "^5.0.1",
-    "react-error-overlay": "^4.0.0"
+    "react-dev-utils": "^6.0.5",
+    "react-error-overlay": "^5.0.5"
   },
   "peerDependencies": {
     "webpack": "^4.0.0"
