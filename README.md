@@ -8,9 +8,9 @@ Catch errors with style 💥✨
 
 This plugin will display an error overlay in your application. It is the same error overlay used in [create-react-app](https://github.com/facebook/create-react-app).
 
-* 📦 Webpack 4 support
-* 🥞 Elegant stack trace
-* 📝 Click to open error line in editor
+- 📦 Webpack 4 support
+- 🥞 Elegant stack trace
+- 📝 Click to open error line in editor
 
 <img src="https://raw.githubusercontent.com/smooth-code/error-overlay-webpack-plugin/master/docs/example.png" alt="Error Overlay Webpack Plugin Example">
 
