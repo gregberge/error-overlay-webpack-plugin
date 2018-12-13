@@ -31,6 +31,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [new ErrorOverlayPlugin()],
+  devtool: 'cheap-module-source-map', // 'eval' is not supported by error-overlay-webpack-plugin
 }
 ```
 
