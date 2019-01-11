@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.6"></a>
+## [0.1.6](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.1.5...v0.1.6) (2019-01-11)
+
+
+### Bug Fixes
+
+* preserve both arguments of original before function ([#23](https://github.com/smooth-code/error-overlay-webpack-plugin/issues/23)) ([433ccb3](https://github.com/smooth-code/error-overlay-webpack-plugin/commit/433ccb3))
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.1.4...v0.1.5) (2018-05-25)
 
