@@ -1,5 +1,8 @@
 import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware'
 
+const chunkPathBasic = require.resolve('./entry-basic')
+const chunkPathDevServer = require.resolve('./entry-devserver')
+
 class ErrorOverlayPlugin {
   apply(compiler) {
     const className = this.constructor.name
@@ -7,8 +10,7 @@ class ErrorOverlayPlugin {
     if (compiler.options.mode !== 'development') return
 
     compiler.hooks.entryOption.tap(className, (context, entry) => {
-      const chunkPath = require.resolve('./entry')
-      adjustEntry(entry, chunkPath)
+      adjustEntry(entry)
     })
 
     compiler.hooks.afterResolvers.tap(className, ({ options }) => {
@@ -25,7 +27,7 @@ class ErrorOverlayPlugin {
   }
 }
 
-function adjustEntry(entry, chunkPath) {
+function adjustEntry(entry) {
   if (typeof entry === 'string') {
     throw new Error(
       `We currently do not inject our entry code into single-file anonymous entries.
@@ -34,12 +36,16 @@ Please use a multi-main (array) or object-form \`entry\` setting for now.`,
   }
 
   if (Array.isArray(entry)) {
-    if (!entry.includes(chunkPath)) {
-      entry.unshift(chunkPath)
+    if (!entry.includes(chunkPathDevServer)) {
+      entry.unshift(chunkPathDevServer)
+    }
+
+    if (!entry.includes(chunkPathBasic)) {
+      entry.unshift(chunkPathBasic)
     }
   } else {
     Object.keys(entry).forEach(entryName => {
-      entry[entryName] = adjustEntry(entry[entryName], chunkPath)
+      entry[entryName] = adjustEntry(entry[entryName])
     })
   }
 
