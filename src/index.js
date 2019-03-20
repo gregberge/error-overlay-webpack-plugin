@@ -9,12 +9,14 @@ class ErrorOverlayPlugin {
 
     if (compiler.options.mode !== 'development') return
 
+    const enableDevServer = !!compiler.options.devServer
+
     compiler.hooks.entryOption.tap(className, (context, entry) => {
-      adjustEntry(entry)
+      adjustEntry(entry, enableDevServer)
     })
 
     compiler.hooks.afterResolvers.tap(className, ({ options }) => {
-      if (options.devServer) {
+      if (enableDevServer) {
         const originalBefore = options.devServer.before
         options.devServer.before = (app, server) => {
           if (originalBefore) {
