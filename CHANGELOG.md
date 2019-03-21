@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.1.7...v0.2.0) (2019-03-21)
+
+
+### Features
+
+* made socket listener optional (required when using dev-middleware only) ([#34](https://github.com/smooth-code/error-overlay-webpack-plugin/issues/34)) ([90caf91](https://github.com/smooth-code/error-overlay-webpack-plugin/commit/90caf91))
+
+
+
 <a name="0.1.7"></a>
 ## [0.1.7](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.1.6...v0.1.7) (2019-03-14)
 
