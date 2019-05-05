@@ -3,6 +3,7 @@ import SockJS from 'sockjs-client';
 import formatWebpackMessages from 'react-dev-utils/formatWebpackMessages';
 import {
   reportBuildError,
+  dismissBuildError,
 } from 'react-error-overlay'
 
 const connection = new SockJS(
@@ -19,6 +20,9 @@ connection.onmessage = function onmessage(e) {
   const {type, data} = JSON.parse(e.data);
   let formatted
   switch (type) {
+    case 'ok':
+      dismissBuildError();
+      break;
     case 'errors':
       formatted = formatWebpackMessages({
         errors: data,
