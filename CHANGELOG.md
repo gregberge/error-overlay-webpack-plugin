@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.2.0...v0.3.0) (2019-05-23)
+
+
+### Features
+
+* close overlay on 'ok' event ([#39](https://github.com/smooth-code/error-overlay-webpack-plugin/issues/39)) ([1471e29](https://github.com/smooth-code/error-overlay-webpack-plugin/commit/1471e29))
+* use webpack options sockPath, sockHost, and sockPort to get socket URL ([#42](https://github.com/smooth-code/error-overlay-webpack-plugin/issues/42)) ([b763f76](https://github.com/smooth-code/error-overlay-webpack-plugin/commit/b763f76))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.1.7...v0.2.0) (2019-03-21)
 
