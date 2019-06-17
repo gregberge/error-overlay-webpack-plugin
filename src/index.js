@@ -37,10 +37,7 @@ class ErrorOverlayPlugin {
 
 function adjustEntry(entry, enableDevServer, sockOptions) {
   if (typeof entry === 'string') {
-    throw new Error(
-      `We currently do not inject our entry code into single-file anonymous entries.
-Please use a multi-main (array) or object-form \`entry\` setting for now.`,
-    )
+    entry = [entry]; // for anonymous single entry points
   }
 
   if (Array.isArray(entry)) {
