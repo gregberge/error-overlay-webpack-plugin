@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.3.0...v0.4.0) (2019-06-17)
+
+
+### Features
+
+* support single string entry ([#43](https://github.com/smooth-code/error-overlay-webpack-plugin/issues/43)) ([494e689](https://github.com/smooth-code/error-overlay-webpack-plugin/commit/494e689))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.2.0...v0.3.0) (2019-05-23)
 
