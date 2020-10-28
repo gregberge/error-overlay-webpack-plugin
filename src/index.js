@@ -26,7 +26,7 @@ class ErrorOverlayPlugin {
         const originalBefore = options.devServer.before
         options.devServer.before = (app, server) => {
           if (originalBefore) {
-            originalBefore(app, server)
+            originalBefore(app, server, compiler)
           }
           app.use(errorOverlayMiddleware())
         }
