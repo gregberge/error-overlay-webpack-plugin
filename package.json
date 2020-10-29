@@ -17,7 +17,7 @@
   "scripts": {
     "build": "babel -d lib src",
     "ci": "yarn build && yarn lint",
-    "format": "prettier --write \"packages/**/*.{js,json,md}\" \"*.{js,json,md}\"",
+    "format": "prettier --write \"**/*.{js,json,md}\" \"*.{js,json,md}\"",
     "lint": "eslint .",
     "prepublishOnly": "yarn build",
     "release": "standard-version && conventional-github-releaser -p angular"
