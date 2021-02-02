@@ -5,8 +5,8 @@
   },
   "devDependencies": {
     "html-webpack-plugin": "^4.5.0",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^4.1.0",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.0.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
