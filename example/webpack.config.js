@@ -12,5 +12,8 @@ module.exports = {
   },
   plugins: [new ErrorOverlayPlugin(), new HtmlWebpackPlugin()],
   devtool: 'cheap-module-source-map', // 'eval' is not supported by error-overlay-webpack-plugin
-  devServer: {},
+  devServer: {
+    port: 8080,
+    open: true,
+  },
 }
