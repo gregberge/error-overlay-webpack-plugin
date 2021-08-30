@@ -1,7 +1,6 @@
 /* global __resourceQuery */
 
 import querystring from 'querystring'
-import url from 'url'
 import SockJS from 'sockjs-client'
 import formatWebpackMessages from 'react-dev-utils/formatWebpackMessages'
 import { reportBuildError, dismissBuildError } from 'react-error-overlay'
@@ -12,12 +11,11 @@ if (typeof __resourceQuery === 'string' && __resourceQuery) {
 }
 
 const connection = new SockJS(
-  url.format({
-    protocol: window.location.protocol,
-    hostname: sockOptions.sockHost || window.location.hostname,
-    port: sockOptions.sockPort || window.location.port,
-    pathname: sockOptions.sockPath || '/sockjs-node',
-  }),
+  `${window.location.protocol}//${
+    sockOptions.sockHost || window.location.hostname
+  }:${sockOptions.sockPort || window.location.port}${
+    sockOptions.sockPath || '/sockjs-node'
+  }`,
 )
 
 connection.onmessage = function onmessage(e) {

@@ -1,7 +1,7 @@
-import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware'
+const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware')
 
-const chunkPathBasic = require.resolve('./entry-basic')
-const chunkPathDevServer = require.resolve('./entry-devserver')
+const chunkPathBasic = require.resolve('./entries/basic')
+const chunkPathDevServer = require.resolve('./entries/devserver')
 
 class ErrorOverlayPlugin {
   apply(compiler) {
