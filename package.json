@@ -15,7 +15,7 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && cp -r ./src/entries ./dist/entries",
     "format": "prettier --write \"**/*.{js,json,md}\" \"*.{js,json,md}\"",
     "lint": "eslint .",
     "prepublishOnly": "yarn build",
