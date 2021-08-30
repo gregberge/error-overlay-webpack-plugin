@@ -1,7 +1,7 @@
 const path = require('path')
 // eslint-disable-next-line import/no-unresolved
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ErrorOverlayPlugin = require('../lib')
+const ErrorOverlayPlugin = require('../dist')
 
 module.exports = {
   mode: 'development',
