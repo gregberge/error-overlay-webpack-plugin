@@ -9,39 +9,38 @@
     "react-error-overlay",
     "error-overlay"
   ],
-  "bugs": "https://github.com/smooth-code/error-overlay-webpack-plugin/issues",
-  "homepage": "https://github.com/smooth-code/error-overlay-webpack-plugin",
-  "repository": "https://github.com/smooth-code/error-overlay-webpack-plugin.git",
+  "bugs": "https://github.com/gregberge/error-overlay-webpack-plugin/issues",
+  "repository": "https://github.com/gregberge/error-overlay-webpack-plugin.git",
   "version": "0.4.2",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "scripts": {
-    "build": "babel -d lib src",
-    "ci": "yarn build && yarn lint",
+    "build": "rollup -c",
     "format": "prettier --write \"**/*.{js,json,md}\" \"*.{js,json,md}\"",
     "lint": "eslint .",
     "prepublishOnly": "yarn build",
     "release": "standard-version && conventional-github-releaser -p angular"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "babel-eslint": "^10.1.0",
     "conventional-github-releaser": "^3.1.5",
-    "eslint": "^7.19.0",
+    "esbuild": "^0.12.24",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-import": "^2.22.1",
-    "prettier": "^2.2.1",
-    "standard-version": "^9.1.0"
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "prettier": "^2.3.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-esbuild": "^4.5.0",
+    "standard-version": "^9.3.1"
   },
   "license": "MIT",
   "dependencies": {
     "react-dev-utils": "^11.0.4",
-    "sockjs-client": "^1.5.0",
+    "react-error-overlay": "^6.0.9",
+    "sockjs-client": "^1.5.2",
     "url": "^0.11.0"
   },
   "peerDependencies": {
-    "webpack": "^5.0.0"
+    "webpack": "^4.0.0 || ^5.0.0"
   }
 }
