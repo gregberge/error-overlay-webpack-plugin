@@ -11,7 +11,7 @@
   ],
   "bugs": "https://github.com/gregberge/error-overlay-webpack-plugin/issues",
   "repository": "https://github.com/gregberge/error-overlay-webpack-plugin.git",
-  "version": "0.4.2",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
