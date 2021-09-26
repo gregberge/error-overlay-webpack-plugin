@@ -1,11 +1,13 @@
 /* global __resourceQuery */
+declare var __resourceQuery: string
 
 import querystring from 'querystring'
 import SockJS from 'sockjs-client'
 import formatWebpackMessages from 'react-dev-utils/formatWebpackMessages'
 import { reportBuildError, dismissBuildError } from 'react-error-overlay'
+import { SocketOptions } from '../SocketOptions'
 
-let sockOptions = {}
+let sockOptions: SocketOptions = {}
 if (typeof __resourceQuery === 'string' && __resourceQuery) {
   sockOptions = querystring.parse(__resourceQuery.substr(1))
 }
