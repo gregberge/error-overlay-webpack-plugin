@@ -1,5 +1,6 @@
 import esbuild from 'rollup-plugin-esbuild'
 import copy from 'rollup-plugin-copy'
+import dts from "rollup-plugin-dts";
 
 const name = 'dist/index'
 
@@ -14,6 +15,11 @@ const esbuildConfig = {
 }
 
 export default [
+  {
+    input: "./src/index.d.ts",
+    output: [{ file: "dist/index.d.ts", format: "es" }],
+    plugins: [dts()],
+  },
   bundle({
     plugins: [
       esbuild(esbuildConfig),
