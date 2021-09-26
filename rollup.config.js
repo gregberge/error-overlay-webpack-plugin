@@ -1,4 +1,5 @@
 import esbuild from 'rollup-plugin-esbuild'
+import copy from 'rollup-plugin-copy'
 
 const name = 'dist/index'
 
@@ -14,7 +15,14 @@ const esbuildConfig = {
 
 export default [
   bundle({
-    plugins: [esbuild(esbuildConfig)],
+    plugins: [
+      esbuild(esbuildConfig),
+      copy({
+        targets: [
+          { src: 'src/entries/**', dest: 'dist/entries' },
+        ],
+      }),
+    ],
     output: [
       {
         file: `${name}.js`,
