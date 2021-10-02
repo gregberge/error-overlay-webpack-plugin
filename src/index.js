@@ -38,10 +38,10 @@ class ErrorOverlayPlugin {
 
     compiler.hooks.afterResolvers.tap(className, ({ options }) => {
       if (devServerEnabled) {
-        const originalBefore = options.devServer.onBeforeSetupMiddleware
+        const originalOnBeforeSetupMiddleware = options.devServer.onBeforeSetupMiddleware
         options.devServer.onBeforeSetupMiddleware = (devServer) => {
-          if (originalBefore) {
-            originalBefore(devServer.app, devServer.server, devServer.compiler)
+          if (originalOnBeforeSetupMiddleware) {
+            originalOnBeforeSetupMiddleware(devServer)
           }
           devServer.app.use(errorOverlayMiddleware())
         }
