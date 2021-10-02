@@ -12,9 +12,24 @@ class ErrorOverlayPlugin {
     const devServerEnabled = !!compiler.options.devServer
     const sockOptions = {}
     if (devServerEnabled) {
-      sockOptions.sockHost = compiler.options.devServer.host
-      sockOptions.sockPath = compiler.options.devServer.webSocketServer && compiler.options.devServer.webSocketServer.options && compiler.options.devServer.webSocketServer.path || '/ws'
-      sockOptions.sockPort = compiler.options.devServer.port
+      sockOptions.sockHost = compiler.options.devServer.client &&
+                             compiler.options.devServer.client.webSocketURL &&
+                             compiler.options.devServer.client.webSocketURL.hostname || compiler.options.devServer.host
+      sockOptions.sockPath = (
+                               compiler.options.devServer.client &&
+                               compiler.options.devServer.client.webSocketURL &&
+                               compiler.options.devServer.client.webSocketURL.pathname
+                             )
+                             ||
+                             (
+                               compiler.options.devServer.webSocketServer &&
+                               compiler.options.devServer.webSocketServer.options &&
+                               compiler.options.devServer.webSocketServer.options.path
+                             )
+                             || '/ws'
+      sockOptions.sockPort = compiler.options.devServer.client &&
+                             compiler.options.devServer.client.webSocketURL &&
+                             compiler.options.devServer.client.webSocketURL.port || compiler.options.devServer.port
     }
 
     compiler.hooks.entryOption.tap(className, (context, entry) => {
