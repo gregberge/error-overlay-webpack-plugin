@@ -10,7 +10,7 @@
     "error-overlay"
   ],
   "bugs": "https://github.com/gregberge/error-overlay-webpack-plugin/issues",
-  "repository": "https://github.com/gregberge/error-overlay-webpack-plugin.git",
+  "repository": "github:gregberge/error-overlay-webpack-plugin",
   "version": "1.0.0",
   "type": "commonjs",
   "main": "dist/index.cjs",
