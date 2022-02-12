@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['airbnb-base', 'prettier'],
+  extends: 'eslint:recommended',
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: 'module',

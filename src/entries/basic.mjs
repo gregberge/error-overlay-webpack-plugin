@@ -3,7 +3,7 @@ import {
   setEditorHandler,
   startReportingRuntimeErrors,
 } from 'react-error-overlay'
-import launchEditorEndpoint from 'react-dev-utils/launchEditorEndpoint'
+import launchEditorEndpoint from 'react-dev-utils/launchEditorEndpoint.js'
 
 setEditorHandler((errorLocation) => {
   // Keep this sync with errorOverlayMiddleware.js
@@ -18,14 +18,4 @@ setEditorHandler((errorLocation) => {
   )
 })
 
-startReportingRuntimeErrors({
-  onError() {
-    if (module.hot) {
-      module.hot.addStatusHandler((status) => {
-        if (status === 'apply') {
-          window.location.reload()
-        }
-      })
-    }
-  },
-})
+startReportingRuntimeErrors({})
