@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/gregberge/error-overlay-webpack-plugin/compare/v1.0.0...v1.1.0) (2022-02-12)
+
+
+### Features
+
+* upgrade & various fixes ([bb87e5f](https://github.com/gregberge/error-overlay-webpack-plugin/commit/bb87e5f4a5b3cf86530929616ee6e35cf84aaa81)), closes [#91](https://github.com/gregberge/error-overlay-webpack-plugin/issues/91) [#90](https://github.com/gregberge/error-overlay-webpack-plugin/issues/90) [#82](https://github.com/gregberge/error-overlay-webpack-plugin/issues/82)
+
+
+### Bug Fixes
+
+* options has an unknown property 'before' ([#88](https://github.com/gregberge/error-overlay-webpack-plugin/issues/88)) ([28de3ed](https://github.com/gregberge/error-overlay-webpack-plugin/commit/28de3ed3441b5e4b6185fd74c77b6dff3c792ea0))
+
 ## [1.0.0](https://github.com/gregberge/error-overlay-webpack-plugin/compare/v0.4.2...v1.0.0) (2021-08-30)
 
 ### [0.4.2](https://github.com/smooth-code/error-overlay-webpack-plugin/compare/v0.4.1...v0.4.2) (2021-02-02)
