@@ -2,7 +2,7 @@
 
 import querystring from 'querystring'
 import SockJS from 'sockjs-client'
-import formatWebpackMessages from 'react-dev-utils/formatWebpackMessages'
+import formatWebpackMessages from 'react-dev-utils/formatWebpackMessages.js'
 import { reportBuildError, dismissBuildError } from 'react-error-overlay'
 
 let sockOptions = {}

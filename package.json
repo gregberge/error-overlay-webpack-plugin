@@ -12,31 +12,39 @@
   "bugs": "https://github.com/gregberge/error-overlay-webpack-plugin/issues",
   "repository": "https://github.com/gregberge/error-overlay-webpack-plugin.git",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "type": "commonjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/gregberge"
+  },
   "scripts": {
-    "build": "rollup -c && cp -r ./src/entries ./dist/entries",
+    "build": "rm -rf ./dist && rollup -c && cp -r ./src/entries ./dist/entries",
     "format": "prettier --write \"**/*.{js,json,md}\" \"*.{js,json,md}\"",
     "lint": "eslint .",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "npm run build",
     "release": "standard-version && conventional-github-releaser -p angular"
   },
   "devDependencies": {
     "conventional-github-releaser": "^3.1.5",
-    "esbuild": "^0.12.24",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
-    "prettier": "^2.3.2",
-    "rollup": "^2.56.3",
-    "rollup-plugin-esbuild": "^4.5.0",
-    "standard-version": "^9.3.1"
+    "esbuild": "^0.14.21",
+    "eslint": "^8.9.0",
+    "prettier": "^2.5.1",
+    "rollup": "^2.67.2",
+    "rollup-plugin-esbuild": "^4.8.2",
+    "standard-version": "^9.3.2"
   },
   "license": "MIT",
   "dependencies": {
-    "react-dev-utils": "^11.0.4",
-    "react-error-overlay": "^6.0.9",
+    "react-dev-utils": "^12.0.0",
+    "react-error-overlay": "6.0.9",
     "sockjs-client": "^1.5.2",
     "url": "^0.11.0"
   },

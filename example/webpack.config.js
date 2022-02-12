@@ -1,7 +1,7 @@
 const path = require('path')
-// eslint-disable-next-line import/no-unresolved
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ErrorOverlayPlugin = require('../dist')
+const ErrorOverlayPlugin = require('../dist/index.cjs')
 
 module.exports = {
   mode: 'development',
@@ -10,7 +10,18 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
   },
-  plugins: [new ErrorOverlayPlugin(), new HtmlWebpackPlugin()],
+  resolve: {
+    fallback: {
+      process: false,
+    },
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process',
+    }),
+    new ErrorOverlayPlugin(),
+    new HtmlWebpackPlugin(),
+  ],
   devtool: 'cheap-module-source-map', // 'eval' is not supported by error-overlay-webpack-plugin
   devServer: {
     port: 8080,

@@ -8,21 +8,21 @@ const bundle = (config) => ({
   external: (id) => !/^[./]/.test(id),
 })
 
-const esbuildConfig = {
-  target: 'es2015',
-}
-
 export default [
   bundle({
-    plugins: [esbuild(esbuildConfig)],
+    plugins: [
+      esbuild({
+        target: 'es2015',
+      }),
+    ],
     output: [
       {
-        file: `${name}.js`,
+        file: `${name}.cjs`,
         format: 'cjs',
         sourcemap: true,
       },
       {
-        file: `${name}.esm.js`,
+        file: `${name}.mjs`,
         format: 'es',
         sourcemap: true,
       },
