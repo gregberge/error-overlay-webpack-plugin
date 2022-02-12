@@ -12,9 +12,21 @@ class ErrorOverlayPlugin {
     const devServerEnabled = !!compiler.options.devServer
     const sockOptions = {}
     if (devServerEnabled) {
-      sockOptions.sockHost = compiler.options.devServer.sockHost
-      sockOptions.sockPath = compiler.options.devServer.sockPath
-      sockOptions.sockPort = compiler.options.devServer.sockPort
+      // In the webpack config it's possible to override the websocket server's
+      // connect URL for clients that need to connect through a proxy or other means.
+      //
+      // Use a webSocketURL config if present, otherwise default to the same address
+      // as the devServer:
+      sockOptions.sockHost =
+        compiler.options.devServer.client?.webSocketURL?.hostname ||
+        compiler.options.devServer.host
+      sockOptions.sockPath =
+        compiler.options.devServer.client?.webSocketURL?.pathname ||
+        compiler.options.devServer.webSocketServer?.options.path ||
+        '/ws'
+      sockOptions.sockPort =
+        compiler.options.devServer.client?.webSocketURL?.port ||
+        compiler.options.devServer.port
     }
 
     compiler.hooks.entryOption.tap(className, (context, entry) => {
@@ -23,12 +35,13 @@ class ErrorOverlayPlugin {
 
     compiler.hooks.afterResolvers.tap(className, ({ options }) => {
       if (devServerEnabled) {
-        const originalBefore = options.devServer.before
-        options.devServer.before = (app, server) => {
-          if (originalBefore) {
-            originalBefore(app, server, compiler)
+        const originalOnBeforeSetupMiddleware =
+          options.devServer.onBeforeSetupMiddleware
+        options.devServer.onBeforeSetupMiddleware = (devServer) => {
+          if (originalOnBeforeSetupMiddleware) {
+            originalOnBeforeSetupMiddleware(devServer)
           }
-          app.use(errorOverlayMiddleware())
+          devServer.app.use(errorOverlayMiddleware())
         }
       }
     })
