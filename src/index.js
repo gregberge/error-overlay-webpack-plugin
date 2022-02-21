@@ -22,7 +22,7 @@ class ErrorOverlayPlugin {
         compiler.options.devServer.host
       sockOptions.sockPath =
         compiler.options.devServer.client?.webSocketURL?.pathname ||
-        compiler.options.devServer.webSocketServer?.options.path ||
+        (compiler.options.devServer.webSocketServer === "object" && compiler.options.devServer.webSocketServer.options?.path) ||
         '/ws'
       sockOptions.sockPort =
         compiler.options.devServer.client?.webSocketURL?.port ||
@@ -37,11 +37,12 @@ class ErrorOverlayPlugin {
       if (devServerEnabled) {
         const originalOnBeforeSetupMiddleware =
           options.devServer.onBeforeSetupMiddleware
-        options.devServer.onBeforeSetupMiddleware = (devServer) => {
+          options.devServer.setupMiddlewares = (middlewares, devServer) => {
           if (originalOnBeforeSetupMiddleware) {
             originalOnBeforeSetupMiddleware(devServer)
           }
-          devServer.app.use(errorOverlayMiddleware())
+          middlewares.unshift(errorOverlayMiddleware());
+          return middlewares;
         }
       }
     })
