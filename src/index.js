@@ -37,7 +37,7 @@ class ErrorOverlayPlugin {
       if (devServerEnabled) {
         const originalOnBeforeSetupMiddleware =
           options.devServer.onBeforeSetupMiddleware
-          options.devServer.setupMiddlewares = (middlewares, devServer) => {
+        options.devServer.setupMiddlewares = (middlewares, devServer) => {
           if (originalOnBeforeSetupMiddleware) {
             originalOnBeforeSetupMiddleware(devServer)
           }
