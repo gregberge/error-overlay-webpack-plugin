@@ -26,7 +26,7 @@
     "url": "https://github.com/sponsors/gregberge"
   },
   "scripts": {
-    "build": "rm -rf ./dist && rollup -c && cp -r ./src/entries ./dist/entries",
+    "build": "rm -rf ./dist && rollup -c && cp -r ./src/entries ./dist/entries && cp ./src/index.d.ts ./dist",
     "format": "prettier --write \"**/*.{js,json,md}\" \"*.{js,json,md}\"",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
