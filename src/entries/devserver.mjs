@@ -10,13 +10,22 @@ if (typeof __resourceQuery === 'string' && __resourceQuery) {
   sockOptions = querystring.parse(__resourceQuery.substr(1))
 }
 
-const connection = new SockJS(
-  `${window.location.protocol}//${
-    sockOptions.sockHost || window.location.hostname
-  }:${sockOptions.sockPort || window.location.port}${
-    sockOptions.sockPath || '/sockjs-node'
-  }`,
-)
+const connection =
+  sockOptions.sockPath === '/ws' && typeof WebSocket !== 'undefined'
+    ? new WebSocket(
+        `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${
+          sockOptions.sockHost || window.location.hostname
+        }:${sockOptions.sockPort || window.location.port}${
+          sockOptions.sockPath || '/ws'
+        }`,
+      )
+    : new SockJS(
+        `${window.location.protocol}//${
+          sockOptions.sockHost || window.location.hostname
+        }:${sockOptions.sockPort || window.location.port}${
+          sockOptions.sockPath || '/sockjs-node'
+        }`,
+      )
 
 connection.onmessage = function onmessage(e) {
   const { type, data } = JSON.parse(e.data)
