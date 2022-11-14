@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/gregberge/error-overlay-webpack-plugin/compare/v1.1.0...v1.1.1) (2022-11-14)
+
+
+### Bug Fixes
+
+* compatibility with `webpack-dev-server` ([f3eaa7b](https://github.com/gregberge/error-overlay-webpack-plugin/commit/f3eaa7b0d4ad7c71f1ef56b5d15083449ef52a86))
+
 ## [1.1.0](https://github.com/gregberge/error-overlay-webpack-plugin/compare/v1.0.0...v1.1.0) (2022-02-12)
 
 
